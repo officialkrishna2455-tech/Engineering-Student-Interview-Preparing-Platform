@@ -159,4 +159,4 @@ IIT ropar_project/
 Built with ❤️ for **Adivya 2.0 Hackathon @ IIT Ropar** by:
 
 **Team HACKFINITY**
-- **Shivam Indore** & **Kushagra Shrivastav**
+- **Shivam Indore** & **Krishna**
