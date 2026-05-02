@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ------------------------------------------------------------------ */
+/* Base layer                                                          */
+/* ------------------------------------------------------------------ */
+@layer base {
+  :root {
+    --color-bg: 3 3 3;
+    --color-surface: 10 10 12;
+    --color-border: 255 255 255;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-surface-950 text-white font-sans;
+    background-color: #030303;
+    background-image: radial-gradient(ellipse 80% 50% at 50% -20%,
+        rgba(99, 102, 241, 0.12),
+        transparent),
+      radial-gradient(ellipse 60% 40% at 80% 60%,
+        rgba(251, 113, 133, 0.06),
+        transparent);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Component layer                                                     */
+/* ------------------------------------------------------------------ */
+@layer components {
+
+  /* Glassmorphism card */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-radius: 1rem;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+
+  .glass-card-hover:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.1);
+  }
+
+  /* Primary button — indigo-600 → indigo-500 */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white text-sm transition-all duration-300;
+    background: linear-gradient(to right, #4f46e5, #6366f1);
+    box-shadow: 0 10px 25px -3px rgba(99, 102, 241, 0.25);
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(to right, #6366f1, #818cf8);
+    box-shadow: 0 15px 35px -3px rgba(99, 102, 241, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  /* Ghost / secondary button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm text-white transition-all duration-300;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-ghost:hover {
+    @apply text-white;
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Stat card */
+  .stat-card {
+    @apply glass-card p-6 flex flex-col gap-2;
+  }
+
+  .stat-label {
+    @apply text-xs font-medium uppercase tracking-wider;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .stat-value {
+    @apply text-3xl font-bold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Utility layer                                                       */
+/* ------------------------------------------------------------------ */
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-indigo-400 via-purple-400 to-rose-400 bg-clip-text text-transparent;
+  }
+
+  .glow-brand {
+    box-shadow: 0 0 60px rgba(99, 102, 241, 0.15),
+      0 0 120px rgba(99, 102, 241, 0.05);
+  }
+
+  .glow-indigo {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.1);
+  }
+
+  .glow-rose-hover:hover {
+    box-shadow: 0 0 30px rgba(251, 113, 133, 0.1);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Scrollbar                                                           */
+/* ------------------------------------------------------------------ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

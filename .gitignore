@@ -1,0 +1,38 @@
+# Environment files - NEVER commit these
+.env
+.env.local
+.env.production
+*.env
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+
+# Database - NEVER commit
+*.db
+*.sqlite
+careerlaunch.db
+
+# Build files
+.next/
+dist/
+build/
+out/
+
+# Python virtual env
+venv/
+env/
+.venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Alembic (keep structure, ignore cache)
+alembic/versions/__pycache__/

@@ -1,0 +1,22 @@
+# render.yaml — Render.com Blueprint for CareerLaunch Backend
+#
+# Deploy with: https://render.com/docs/blueprint-spec
+# Or configure manually using the settings below.
+
+services:
+  - type: web
+    name: careerlaunch-api
+    runtime: python
+    region: oregon
+    rootDir: backend
+    buildCommand: chmod +x build.sh && ./build.sh
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false         # Set manually in Render dashboard
+      - key: FRONTEND_URL
+        sync: false         # e.g. https://your-frontend.vercel.app
+      - key: DATABASE_URL
+        sync: false         # Leave empty to use SQLite, or attach a Render PostgreSQL
+      - key: PYTHON_VERSION
+        value: "3.11.9"
