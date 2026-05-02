@@ -1,5 +1,5 @@
 # 🚀 CareerLaunch
-**An AI-powered placement preparation platform built to help Student Intreview preparation**
+**An AI-powered placement preparation platform built to help Student Interview preparation**
 
 [![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
